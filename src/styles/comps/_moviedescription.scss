@@ -1,0 +1,310 @@
+.movie-description {
+    position: relative;
+    padding-bottom: 50px;
+
+    @include mq($desktopScreen) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 840px;
+        transform: translate(-50%,-50%);
+    }
+
+    
+    .page-title {
+        display: none;
+
+        @include mq($desktopScreen) {
+            display: block;
+            padding-bottom: 30px;
+            font-weight: normal;
+            font-size: 2em;
+            max-width: 80%;
+        }
+    }
+
+    .movie-poster {
+        position: relative;
+        height: 400px;
+        max-width: 100%;
+
+        @include mq($tabletScreen) {
+            height: 450px;
+        }
+
+        @include mq($desktopScreen) {
+            height: 0;
+        }
+        
+        img.poster {
+            position: absolute;
+            top: 0;      
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 90%;
+
+            @include mq($desktopScreen) {
+                width: 250px;
+                height: auto;
+                right: 0;
+                box-shadow: 0 0 30px -3px rgba($green, 0.479);
+            }
+        
+        }
+
+        .list-actions {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            position: fixed;
+            transform: translate(0, -50%);
+            top: 30%;
+            right: 0;
+            padding: 8px 12px 8px 8px;
+            border-radius: 8px 0 0 8px;
+            background-color: $dark-blue;
+            box-shadow: 2px 2px 15px -5px rgba(85, 197, 109, 0.479);
+
+            @include mq($tabletScreen) {
+                padding: 8px;
+                border-radius: 17px 0 0 17px;
+            }
+
+            @include mq($desktopScreen) {
+                display: none;
+            }
+
+        }
+
+    }
+
+
+
+    .description-btn {
+        background-color: $light-grey;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 20px;
+        margin: 5px 0px;
+        border: 1px solid $green;
+        background-position: center;
+        background-repeat: no-repeat;
+        outline: none;
+        cursor: pointer;
+
+        @include mq($tabletScreen) {
+            width: 35px;
+            height: 35px;
+        }
+
+
+
+        &.fav-btn {
+            background-size: 17px;
+            background-image: url('../../images/001-heart.png');
+        
+            @include mq($tabletScreen) {
+                background-size: 20px;
+            }
+
+            &.active {
+                background-image: url('../../images/004-heart.png');
+            }
+
+        }
+
+        &.watch-btn {
+            background-size: 20px;
+            background-image: url('../../images/001-3d-glasses.png');
+            
+            @include mq($tabletScreen) {
+                background-size: 23px;
+            }
+            
+            &.actived {
+                background-image: url('../../images/002-3d-glasses.png');
+            }
+        }
+
+    }
+
+    .spacing-div {
+        // height: 50%;
+        // min-width: 100%;
+    
+        @include mq($tabletScreen) {
+            // height: 50%;
+
+        }
+    
+        @include mq($desktopScreen) {
+           width: 85%;
+        }
+
+    }
+
+
+    .description-card {
+        padding: 15px;
+        background-color: $dark-blue;
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        height: min-content;
+        margin: 0 20px;
+
+        @include mq($tabletScreen) {
+             margin-top: 0;
+        }
+
+        @include mq($desktopScreen) {
+            margin: 0;
+            padding: 5% 15% 5.5% 5%;
+        }
+
+        .description-intro {
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            
+            @include mq($desktopScreen) {
+                width: 90%;
+            }
+
+            .title {
+                width: 70%;
+                margin-left: 0;
+
+                h1 {
+                    padding: 0;
+                }
+                .movietitle {
+                    font-size: 1em;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+
+                    @include mq($desktopScreen) {
+                        display: none;
+                    }
+                }
+                .year-date {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 20px 0 ;
+                    width: max-content;
+
+                    @include mq($desktopScreen) {
+                        margin: 0 0 50px;
+                    }
+
+                    .movieinfo {
+                        font-size: 0.9em;
+                        font-weight: normal;
+                        
+                        &:nth-child(1) {
+                            margin-right: 35px;
+                        }
+
+                        @include mq($desktopScreen) {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+            .rating {
+                font-size: 0.8em;
+                font-family: $open-sans;
+            }
+        }
+        .description-body {
+            p{
+                font-size: 12px; 
+                margin: 0 0 25px 0;
+
+                @include mq($desktopScreen) {
+                    font-size: 16px;
+                    width: 90%;
+                    line-height: 30px;
+                }
+            }
+
+
+            .list-actions-desktop {
+                display: none;
+
+                @include mq($desktopScreen) {
+                    display: block;
+                }
+
+                .desc-btn-desktop {
+                    color: white;
+                    border: none;
+                    width: auto;
+                    height: 30px;
+                    background-color: transparent;
+                    border: 1px solid $green;
+                    padding: 5px 9px 5px 40px;
+                    border-radius: 15px;
+                    background-position: 7px center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin: 20px 20px 30px 0;
+                    cursor: pointer;
+                    outline: none;
+                }
+
+                .fav-btn-desktop {
+                    background-size: 20.5px;
+                    background-position: 10px center;
+                    background-image: url('../../images/001-heart.png');
+                    &.active {
+                        background-image: url('../../images/004-heart.png');
+                    }
+                }
+
+                .watch-btn-desktop {
+                    background-image: url('../../images/001-3d-glasses.png');
+                    &.actived {
+                        background-image: url('../../images/002-3d-glasses.png');
+                    }
+                }
+
+            }
+
+
+            ul {
+                color: white;
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: space-evenly;
+                border-top: 1px solid $green;
+                padding-top: 10px;
+                margin-top: 10px;
+
+                @include mq($desktopScreen) {
+                    padding-top: 20px;
+                    justify-content: flex-start;
+                }
+            }
+
+            li {
+                font-size: 0.6em;
+                border: 1px solid $green;
+                padding: 4px 7px;
+                border-radius: 10px;
+
+                @include mq($desktopScreen) {
+                    font-size: 0.8em;
+                    padding: 5px 10px;
+                    border-radius: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+

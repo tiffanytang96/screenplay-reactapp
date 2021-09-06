@@ -1,0 +1,17 @@
+// Base
+@import 'variables';
+@import 'mixins'; 
+@import 'reset';
+
+// Components
+@import './comps/nav';
+@import './comps/search';
+@import './comps/home';
+@import './comps/about';
+@import './comps/moviecard';
+@import './comps/list';
+@import './comps/gallery';
+@import './comps/moviedescription';
+@import './comps/pagenotfound';
+@import './comps/searchresults';
+@import './comps/pagination';

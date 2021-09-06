@@ -1,0 +1,159 @@
+// sr-only for hiding content...but still make it accessible to screen readers
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  // Nav styles
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background-color: $dark-blue;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        align-items: center;
+        min-width: 55px;
+        z-index: 999;
+        
+        @include mq($desktopScreen){
+            min-width: 155px;
+        }
+    }
+      
+    .header{
+       
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+            margin-top: 15px;
+            margin-bottom: 30px;
+            margin-left: -7px;
+            
+            img {
+                min-width: 35px !important;
+                
+                @include mq($desktopScreen){
+                    min-width: 60px !important;
+                }
+            }
+            @include mq($desktopScreen){
+                margin-left: 10px;
+                margin-top: 35px;
+            }
+
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 25px;
+            
+       
+            @include mq($desktopScreen){
+                margin-top: 85px;
+            }
+        }
+
+        li{
+            &:not(:last-child) {
+                margin-top: 20px;
+            }
+            &:last-child {
+                margin-top: 14px;
+
+                @include mq($desktopScreen){
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            width: 22px; // made this up...whatever size works for your icons
+            height: 22px; // made this up...whatever size works for your icons
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            @include mq($desktopScreen){
+                background-size: 0 0;
+                background-image: none;
+                color: white;
+                text-decoration: none;
+                font-family: $open-sans;
+                margin-left: -15px;
+                min-width: fit-content;
+
+                &.home:before {
+                    content:"Home";
+                }
+                &.about:before {
+                    content:"About";
+                }
+                &.favourites:before {
+                    content:"Favourites";
+                }
+                &.watch-list:before {
+                    content:"Watch List";
+                }
+
+                &.active,
+                &:focus,
+                &:hover {
+                    color: $green;
+                }
+            }
+
+            &.home {
+                background-image: url('../../images/002-home.png');
+                &.active {
+                    background-image: url('../../images/003-home.png');
+                }
+            }
+            &.about {
+                background-image: url('../../images/005-info.png');
+                &.active {
+                    background-image: url('../../images/006-info.png');
+                }
+            }
+            &.favourites {
+                background-image: url('../../images/001-heart.png');
+                &.active {
+                    background-image: url('../../images/004-heart.png');
+                }
+            }
+            &.watch-list {
+                background-image: url('../../images/001-3d-glasses.png');
+                &.active {
+                    background-image: url('../../images/002-3d-glasses.png');
+                }
+            }
+        }
+    }
+      .footer{
+
+        p {
+            display: none;
+            color: white;
+            text-align: center;
+            font-size: 0.5em;
+  
+            @include mq($desktopScreen){
+                display: block;
+                width: 130px;
+                margin-bottom: 35px;
+            }
+        }
+      }
+  
+

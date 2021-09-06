@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $slate-blue;
+
+    .body {
+        // width: -webkit-fill-available;
+        width: calc(100% - 55px);
+        position: relative;
+        margin-left: 55px;
+        @include mq($desktopScreen){
+            width: calc(100% - 155px); 
+            margin-left: 155px;
+        }
+    }
+}
+
+.home-section {
+    padding: 22px 20px;
+
+    h1 {
+        padding: 0px 5px;
+    }
+
+    .options-select-bar {
+        border: none;
+        background-color: $dark-blue;
+        color: white;
+        width: 120px;
+        height: 25px;
+        line-height: 25px;
+        padding-left: 5px;
+        margin: 20px 0 25px;
+    }
+
+    select {
+        outline: none;
+        option {
+            outline: none;
+        }
+    }
+
+    .loader {
+        text-align: center;
+    }
+}

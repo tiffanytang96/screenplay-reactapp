@@ -1,0 +1,120 @@
+.search-results-list-div {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color:rgba(19, 32, 48, 0.7);
+    border-bottom: 20px solid rgba(19, 32, 48, 0.4);
+    border-top: 15px solid rgba(19, 32, 48, 0.4);
+    position: absolute;
+    
+
+    @include mq($tabletScreen) {
+        height: 500px;
+        overflow-y:auto;
+        overflow-x: hidden;
+        
+        -webkit-box-shadow: 4px 6px 18px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 4px 6px 18px -9px rgba(0,0,0,0.75);
+        box-shadow: 4px 6px 18px -9px rgba(0,0,0,0.75);
+
+        &::-webkit-scrollbar {
+            -webkit-box-shadow: inset 0 0 6px $slate-blue;
+            border-radius: 10px;
+            background-color:$green;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color:$light-grey;
+        }
+        
+        &::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px $slate-blue;
+            background-color:$green;
+        }
+        
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+// Styles for individual list items
+.search-results-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:$dark-blue;
+    padding: 15px;
+    border-bottom: 2px solid $green;
+    
+
+    @include mq($tabletScreen) {
+        width: 70%; 
+        margin: 0 auto;
+        justify-content: space-evenly;
+        
+    }
+
+    @include mq($desktopScreen) {
+        width: 60%;
+    }
+
+    .search-results-img{
+        max-width: 100px;
+        @include mq($tabletScreen) {
+            max-width: 85px;
+        }
+    }
+
+    .search-results-content {
+        width: 60%;
+
+        @include mq($tabletScreen){
+            width: 40%;
+        }
+
+        @include mq($desktopScreen){
+            width: 30%;
+        }
+
+        .search-results-title {
+            max-width: 165px;
+            white-space: initial;
+            overflow:wrap;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline white;
+                }
+
+            }
+        }
+    }
+    .search-results-text {
+        display: flex;
+        justify-content: space-between;
+
+        
+        .release-date {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .results-rating {
+            width: 40px;
+        }
+
+    }
+
+}

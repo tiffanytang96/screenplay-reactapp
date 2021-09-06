@@ -1,0 +1,76 @@
+
+// General shared watch list and favourite page styles 
+.list-card {
+    text-align: center;
+}
+// Favourites page styles
+.fav-section {
+    padding: 22px 20px;
+
+    h1 {
+        padding: 0px 5px;
+    }
+    
+    .fav-card {
+        margin-top: 25px;
+        padding: 25px 10px;
+        background-color: $dark-blue;
+        width: auto;
+        height: min-content;
+        
+        p {
+            line-height: 35px;
+        }
+
+        .heart-icon {
+            display: inline-block;
+            transform: translateY(8px);
+            width: 25px;
+            height: 25px;
+            padding: 2px;
+            margin: 0 5px;
+            border-radius: 15px;
+            border: 1px solid $green;
+            background-image: url('../../images/001-heart.png');
+            background-size: 12px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+// Watch List page styles
+.watch-section {
+    padding: 22px 20px;
+
+    h1 {
+        padding: 0px 5px;
+    }
+    
+    .watch-card {
+        margin-top: 25px;
+        padding: 25px 10px;
+        background-color: $dark-blue;
+        width: auto;
+        height: min-content;
+        
+        p {
+            line-height: 35px;
+        }
+
+        .watch-icon {
+            display: inline-block;
+            transform: translateY(8px);
+            width: 25px;
+            height: 25px;
+            padding: 2px;
+            margin: 0 5px;
+            border-radius: 15px;
+            border: 1px solid $green;
+            background-image: url('../../images/001-3d-glasses.png');
+            background-size: 14px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.about-section {
+    padding: 22px 20px;
+
+    h1 {
+        padding: 0px 5px;
+    }
+
+    .about-card {
+        margin-top: 25px;
+        padding: 25px 10px;
+        background-color: $dark-blue;
+        width: auto;
+        height: min-content;
+
+        @include mq($tabletScreen){
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        div {
+            margin-bottom: 35px;
+            padding: 10px 25px;
+
+            @include mq($tabletScreen){
+                width: 50%;
+            }
+
+            h2 {
+                margin-bottom: 15px;
+            }
+
+            img {
+                margin-top: 15px;
+            }
+        }
+
+    }
+    
+}

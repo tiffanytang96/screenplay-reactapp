@@ -1,0 +1,151 @@
+.movie-card {
+    width: auto;
+    height: auto;
+    padding-bottom: 80px;
+    position: relative;
+    margin-bottom: 35px;
+
+    @include mq($smallTabletScreen){
+       max-width: 48%;
+    }
+    @include mq($tabletScreen){
+       max-width: 30%;
+    }
+    @include mq($desktopScreen){
+       max-width: 23%;
+    }
+    @include mq($largeDesktopScreen){
+       max-width: 18%;
+    }
+    
+    .top-btn {
+        background-color: $light-grey;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: 2px solid $green;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        outline: none;
+
+        &.fav-btn {
+            background-size: 23px;
+            background-image: url('../../images/001-heart.png');
+            &.active {
+                background-image: url('../../images/004-heart.png');
+            }
+        }
+
+        &.watch-btn {
+            background-size: 27px;
+            background-image: url('../../images/001-3d-glasses.png');
+            &.actived {
+                background-image: url('../../images/002-3d-glasses.png');
+            }
+        }
+
+    }
+
+    .image {
+        position: relative;
+
+        .btns {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            padding: 10px 10px;
+        }
+
+        img {
+            width: fit-content;
+            height: auto;
+            border-radius: 6px;
+        }
+    }
+
+    .description {
+        background:$dark-blue;
+        // background: linear-gradient(0deg, rgba(19,33,49,1) 81%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(0deg, rgba(19,33,49,1) 72%, rgba(15,25,38,0.5591647331786542) 88%, rgba(0,0,0,0) 100%);
+        padding: 70px 15px 10px 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 6px;
+
+        .description-intro {
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: space-between;
+
+            .title {
+                width: 70%;
+                margin-left: 0;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    
+                    &:hover {
+                        text-decoration: underline white;
+                    }
+                }
+
+                h1 {
+                    padding: 0;
+                }
+                .movietitle {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                .movieinfo {
+                    font-size: 0.7em;
+                    font-style: italic;
+                    font-weight: normal;
+                }
+            }
+
+            .rating {
+                font-size: 0.8em;
+                font-family: $open-sans;
+            }
+        }
+    
+        .description-body {
+            p{
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical; 
+                font-size: 10px; 
+            }
+            ul {
+                color: white;
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                border-top: 1px solid $green;
+                padding-top: 8px;
+                margin-top: 10px;
+            }
+
+            li {
+                font-size: 0.5em;
+                font-weight: 600;
+                border: 1px solid $green;
+                padding: 4px 7px;
+                margin: 2px;
+                border-radius: 10px;
+            }
+
+        }
+    }
+    
+}

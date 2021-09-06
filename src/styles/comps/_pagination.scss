@@ -1,0 +1,57 @@
+// Pagination Styles
+
+.home-section {
+    .top-home-functions {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .pagination{
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+
+    .top-pagination-div, .bot-pagination-div {
+        display: flex;
+        height: auto;
+
+        p {
+            padding: 0 20px;
+        }
+
+        .next::before{
+            @include mq($tabletScreen){
+                content: "Next Page";
+            }
+        }
+        
+        .prev::after{
+            @include mq($tabletScreen){
+                content: "Prev Page";
+            }
+        }
+
+        .next,.prev {
+            color: $green;
+            height: 50%;
+        }
+
+        .prev:disabled, .next:disabled {
+            color: $light-grey;
+        }
+
+        .prev-icon, .next-icon {
+            transform: translateY(2px);
+        }
+    }
+    
+    .top-pagination-div {
+        align-items: center;
+    }
+
+    .bot-pagination-div {
+        justify-content: flex-end;
+    }
+}

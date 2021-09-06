@@ -1,0 +1,22 @@
+.movie-gallery {
+    @include mq($smallTabletScreen){
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+.fav-gallery {
+    margin-top: 25px;
+    
+    @include mq($tabletScreen){
+        .movie-gallery {
+            justify-content: flex-start;
+            justify-self: center;
+            flex-wrap: wrap;
+            .movie-card {
+                margin-right: 20px;
+                
+            }
+        }
+    }
+}
