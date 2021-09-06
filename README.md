@@ -1,3 +1,6 @@
+This responsive web application allows users to browse and filter through a database of movies that are new releases, popular or upcoming. It has the functionalities to select favourite movies and add them to a watch list. Used with TMDb API data to grab and output results. Made in 2020 @ BCIT for educational purposes. https://tiffanytang.ca/screen-play/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
